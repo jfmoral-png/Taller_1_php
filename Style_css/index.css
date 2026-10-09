@@ -1,0 +1,14 @@
+.button-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(166, 0, 255);
+    color: aliceblue;
+    margin: 20px;
+    width: 20%;
+    height: 50px;
+    border-radius: 20%;
+    text-decoration: none;
+}
+
