@@ -32,7 +32,7 @@
     <?php endif; ?>
 
     <div>
-        <a href="../index.html">Volver</a>
+        <a href="../index.html" class="enlace-volver">Volver</a>
     </div>
 
 </body>

@@ -53,7 +53,7 @@ if (isset($_GET["modo"]) && $_GET["modo"] === "binario"){
     </form>
     
     <div>
-        <a href="../index.html">Volver</a>
+        <a href="../index.html" class="enlace-volver">Volver</a>
     </div>
     
 </body>

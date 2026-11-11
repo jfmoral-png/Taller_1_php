@@ -18,12 +18,6 @@ label {
     margin-right: 10px;
 }
 
-.enlace-volver {
-    display: inline-block;
-    padding: 8px 16px;
-    border-radius: 5px;
-}
-
 input {
     color: rgb(255, 255, 255) !important;
     width: 300px;
@@ -48,3 +42,46 @@ button {
     width: 100px;
     height: 30px;
 }
+
+.button-limpiar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(166, 0, 255);
+    color: aliceblue;
+    margin: 20px;
+    width: 20%;
+    height: 50px;
+    text-decoration: none;
+    border-radius: 20%;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.button-limpiar:hover {
+    opacity: 0.6;
+    transform: scale(1.05);
+}
+
+.enlace-volver {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(166, 0, 255);
+    color: aliceblue;
+    margin: 20px;
+    width: 20%;
+    height: 50px;
+    text-decoration: none;
+    border-radius: 20%;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.enlace-volver:hover {
+    opacity: 0.6;
+    transform: scale(1.25);
+}
+

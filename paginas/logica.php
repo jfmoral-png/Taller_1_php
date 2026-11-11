@@ -27,7 +27,7 @@ $resultado = $_GET["resultado"] ?? null;
             <input type="text" id="elemento" name="elemento">
             <button type="submit" name="agregar" value="1">Añadir a Conjunto 1</button>
             <button type="submit" name="agregar" value="2">Añadir a Conjunto 2</button>
-            <a href="../paginas/logica.php">Limpiar</a>
+            <a href="../paginas/logica.php" class="button-limpiar">Limpiar</a>
         </div>
 
         <div>
@@ -59,7 +59,7 @@ $resultado = $_GET["resultado"] ?? null;
     </form>
 
     <div>
-        <a href="../index.html">Volver</a>
+        <a href="../index.html" class="enlace-volver">Volver</a>
     </div>
     
 </body>

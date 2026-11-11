@@ -23,8 +23,13 @@ $iniciales = [];
 foreach ($palabras as $palabra) {
     if (preg_match('/\p{L}/u', $palabra, $coincidencia) === 1) {
         $inicial = strtr($coincidencia[0], [
-            "á" => "Á", "é" => "É", "í" => "Í", "ó" => "Ó", "ú" => "Ú",
-            "ü" => "Ü", "ñ" => "Ñ",
+            "á" => "Á",
+            "é" => "É",
+            "í" => "Í",
+            "ó" => "Ó",
+            "ú" => "Ú",
+            "ü" => "Ü",
+            "ñ" => "Ñ",
         ]);
         $iniciales[] = strtoupper($inicial);
     }
@@ -35,6 +40,6 @@ if ($iniciales === []) {
     exit;
 }
 
-header("Location: ../paginas/acronomos.php?resultado=" 
-. urlencode(implode("", $iniciales)));
+header("Location: ../paginas/acronomos.php?resultado="
+    . urlencode(implode("", $iniciales)));
 exit;

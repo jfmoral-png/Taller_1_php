@@ -1,0 +1,29 @@
+textarea {
+    box-sizing: border-box;
+    width: min(90%, 500px);
+    min-height: 70px;
+    padding: 8px;
+    color: white;
+    background-color: #222;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.arbol {
+    display: inline-block;
+    text-align: left;
+    color: aliceblue;
+}
+
+.arbol ul {
+    padding-left: 28px;
+}
+
+.mensaje-error {
+    color: #ff8a8a;
+}
+
+.nota {
+    color: aliceblue;
+}

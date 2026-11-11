@@ -1,70 +1,49 @@
 <?php
 
-class Calculadora {
-    public function operar($valor1, $valor2, $operador){
-        switch ($operador){
-            case "+":
-                return $valor1 + $valor2;
-            case "-" :
-                return $valor1 - $valor2;
-            case "*" :
-                return $valor1 * $valor2;
-            case "/" :
-                return $valor1 / $valor2;
-            case "%" :
-                return fmod($valor1, $valor2);
+class Calculadora
+{
+    public function operar($numero1, $numero2, $operador)
+    {
+        switch ($operador) {
+            case "suma":
+                return $numero1 + $numero2;
+            case "resta":
+                return $numero1 - $numero2;
+            case "multiplicacion":
+                return $numero1 * $numero2;
+            case "division":
+                if ($numero2 == 0) {
+                    return "Error: División por cero";
+                }
+                return $numero1 / $numero2;
+            default:
+                return "Error: Operación no válida";
         }
-
-        return $valor1;
+    
     }
 }
 
 $accion = $_POST["accion"] ?? "";
-$pantalla = $_POST["pantalla"] ?? "";
-$numero = $_POST["numero"] ?? "";
+$numero1 = $_POST["numero1"] ?? "";
+$numero2 = $_POST["numero2"] ?? "";
+$operador = $_POST["operaciones"] ?? "";
+$historial = $_POST["historial"] ?? $_GET["historial"] ?? "";
 
-if (!is_string($accion) || !is_string($pantalla) || !is_string($numero)) {
-    http_response_code(400);
-    exit("Solicitud no válida.");
-}
+$calculadora = new Calculadora();
 
-if ($accion === "AC" || $accion === "C") {
-    $pantalla = "";
-} elseif ($accion === "del") {
-    $pantalla = substr($pantalla, 0, -1);
-} elseif ($numero !== "") {
-    $pantalla .= $numero;
-} elseif ($accion === ".") {
-    $partes = preg_split('/[+\-*\/%]/', $pantalla);
-    $ultimoNumero = end($partes);
-    if (strpos($ultimoNumero, ".") === false) {
-        $pantalla .= $ultimoNumero === "" ? "0." : ".";
-    }
-} elseif (in_array($accion, ["%", "/", "*", "-", "+"], true)) {
-    if (preg_match('/[\d.]$/', $pantalla) === 1) {
-        $pantalla .= $accion;
-    } elseif (preg_match('/[+\-*\/%]$/', $pantalla) === 1) {
-        $pantalla = substr($pantalla, 0, -1) . $accion;
-    }
-}
+$resultado = $calculadora->operar($numero1, $numero2, $operador);
+$operador = match ($operador) {
+    "suma" => "+",
+    "resta" => "-",
+    "multiplicacion" => "*",
+    "division" => "/",
+    default => $operador,
+};
 
-if ($accion === "=") {
-    $patron = '/^(\d+(?:\.\d*)?|\.\d+)([+\-*\/%])(\d+(?:\.\d*)?|\.\d+)$/';
-    if (preg_match($patron, $pantalla, $coincidencias) === 1) {
-        $valor1 = (float) $coincidencias[1];
-        $operador = $coincidencias[2];
-        $valor2 = (float) $coincidencias[3];
-
-        if (($operador === "/" || $operador === "%") && $valor2 == 0) {
-            $pantalla = "Error: no se puede dividir entre cero";
-        } else {
-            $calculadora = new Calculadora();
-            $pantalla = (string) $calculadora->operar($valor1, $valor2, $operador);
-        }
-    }
-}
+$historial .= ($historial === "" ? "" : "\n") . "$numero1 $operador $numero2 = $resultado";
 
 header("Location: ../paginas/calculadora.php?" . http_build_query([
-    "pantalla" => $pantalla
+    "resultado" => $resultado,
+    "historial" => $historial
 ]));
 exit;

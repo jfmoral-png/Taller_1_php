@@ -14,37 +14,7 @@ $provided = $provided ?? [];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Árbol binario</title>
     <link rel="stylesheet" href="../Style_css/style_base.css">
-    <style>
-        textarea {
-            box-sizing: border-box;
-            width: min(90%, 500px);
-            min-height: 70px;
-            padding: 8px;
-            color: white;
-            background-color: #222;
-            border: 1px solid #aaa;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .arbol {
-            display: inline-block;
-            text-align: left;
-            color: aliceblue;
-        }
-
-        .arbol ul {
-            padding-left: 28px;
-        }
-
-        .mensaje-error {
-            color: #ff8a8a;
-        }
-
-        .nota {
-            color: aliceblue;
-        }
-    </style>
+    <link rel="stylesheet" href="../Style_css/arbolBinario.css">
 </head>
 <body>
     <h1>Construir un árbol binario</h1>
@@ -65,7 +35,7 @@ $provided = $provided ?? [];
         </div>
         <div>
             <button type="submit">Construir árbol</button>
-            <a href="arbolBinario.php">Limpiar</a>
+            <a href="arbolBinario.php" class="button-limpiar">Limpiar</a>
         </div>
     </form>
 
@@ -91,7 +61,7 @@ $provided = $provided ?? [];
     <?php endif; ?>
 
     <div>
-        <a href="../index.html">Volver</a>
+        <a href="../index.html" class="enlace-volver">Volver</a>
     </div>
 </body>
 </html>

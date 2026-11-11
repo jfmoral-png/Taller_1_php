@@ -1,14 +1,18 @@
 <?php
-class Logica {
-    public function union($conjunto1, $conjunto2) {
+class Logica
+{
+    public function union($conjunto1, $conjunto2)
+    {
         return array_values(array_unique(array_merge($conjunto1, $conjunto2)));
     }
 
-    public function interseccion($conjunto1, $conjunto2) {
+    public function interseccion($conjunto1, $conjunto2)
+    {
         return array_values(array_intersect($conjunto1, $conjunto2));
     }
 
-    public function diferencia($conjunto1, $conjunto2) {
+    public function diferencia($conjunto1, $conjunto2)
+    {
         return [
             "A-B" => array_values(array_diff($conjunto1, $conjunto2)),
             "B-A" => array_values(array_diff($conjunto2, $conjunto1)),
@@ -39,19 +43,19 @@ switch ($accion) {
     case "union":
         $resultado = $logica->union($conjuntos[1], $conjuntos[2]);
         break;
-    $resultado = $logica->union($conjuntos[1], $conjuntos[2]);
+        $resultado = $logica->union($conjuntos[1], $conjuntos[2]);
     case "interseccion":
         $resultado = $logica->interseccion($conjuntos[1], $conjuntos[2]);
         break;
-    $resultado = $logica->interseccion($conjuntos[1], $conjuntos[2]);
+        $resultado = $logica->interseccion($conjuntos[1], $conjuntos[2]);
     case "diferencia":
         $resultado = $logica->diferencia($conjuntos[1], $conjuntos[2]);
         break;
-    $resultado = $logica->diferencia($conjuntos[1], $conjuntos[2]);
+        $resultado = $logica->diferencia($conjuntos[1], $conjuntos[2]);
     default:
         $resultado = [];
 }
-    
+
 
 header("Location: ../paginas/logica.php?" . http_build_query([
     "conjuntos" => $conjuntos,

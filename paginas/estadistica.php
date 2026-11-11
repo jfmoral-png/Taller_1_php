@@ -22,7 +22,7 @@ if (!is_array($numeros)) {
             <label for="numero">Número:</label>
             <input type="number" id="numero" name="numero" step="any">
             <button type="submit" name="accion" value="anadir">Añadir</button>
-            <a href="../paginas/estadistica.php">Limpiar</a>
+            <a href="../paginas/estadistica.php"  class="button-limpiar">Limpiar</a>
         </div>
 
         <div>
@@ -49,7 +49,7 @@ if (!is_array($numeros)) {
     </form>
 
     <div>
-        <a href="../index.html">Volver</a>
+        <a href="../index.html" class="enlace-volver">Volver</a>
     </div>
 </body>
 </html>
