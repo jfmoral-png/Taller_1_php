@@ -1,4 +1,6 @@
 <?php
+require __DIR__ . "/../paginas/arbolBinario.php";
+
 function parseTraversal($value, string $name): array
 {
     if (!is_string($value)) {
@@ -254,5 +256,3 @@ try {
     $tree = null;
     $calculated = null;
 }
-
-require __DIR__ . "/../paginas/arbolBinario.php";

@@ -43,15 +43,12 @@ switch ($accion) {
     case "union":
         $resultado = $logica->union($conjuntos[1], $conjuntos[2]);
         break;
-        $resultado = $logica->union($conjuntos[1], $conjuntos[2]);
     case "interseccion":
         $resultado = $logica->interseccion($conjuntos[1], $conjuntos[2]);
         break;
-        $resultado = $logica->interseccion($conjuntos[1], $conjuntos[2]);
     case "diferencia":
         $resultado = $logica->diferencia($conjuntos[1], $conjuntos[2]);
         break;
-        $resultado = $logica->diferencia($conjuntos[1], $conjuntos[2]);
     default:
         $resultado = [];
 }
