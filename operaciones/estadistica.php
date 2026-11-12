@@ -1,12 +1,15 @@
 <?php
-class Estadistica {
-    public function promedio($numeros) {
+class Estadistica
+{
+    public function promedio($numeros)
+    {
         $suma = array_sum($numeros);
         $promedio = $suma / count($numeros);
         return $promedio;
     }
 
-    public function mediana($numeros) {
+    public function mediana($numeros)
+    {
         sort($numeros, SORT_NUMERIC);
         $cantidad = count($numeros);
         $mitad = intdiv($cantidad, 2);
@@ -20,7 +23,8 @@ class Estadistica {
         return $mediana;
     }
 
-    public function moda($numeros) {
+    public function moda($numeros)
+    {
         $frecuencias = array_count_values($numeros);
         $moda = array_search(max($frecuencias), $frecuencias);
         return $moda;

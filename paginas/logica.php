@@ -6,20 +6,24 @@ $resultado = $_GET["resultado"] ?? null;
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lógica de conjuntos</title>
     <link rel="stylesheet" href="../Style_css/style_base.css">
 </head>
+
 <body>
-    
+
     <form action="../operaciones/logica.php" method="post">
         <?php foreach ($conjunto1 as $elemento): ?>
-            <input type="hidden" name="conjuntos[1][]" value="<?php echo htmlspecialchars($elemento, ENT_QUOTES, "UTF-8"); ?>">
+            <input type="hidden" name="conjuntos[1][]"
+                value="<?php echo htmlspecialchars($elemento, ENT_QUOTES, "UTF-8"); ?>">
         <?php endforeach; ?>
         <?php foreach ($conjunto2 as $elemento): ?>
-            <input type="hidden" name="conjuntos[2][]" value="<?php echo htmlspecialchars($elemento, ENT_QUOTES, "UTF-8"); ?>">
+            <input type="hidden" name="conjuntos[2][]"
+                value="<?php echo htmlspecialchars($elemento, ENT_QUOTES, "UTF-8"); ?>">
         <?php endforeach; ?>
 
         <div>
@@ -32,11 +36,13 @@ $resultado = $_GET["resultado"] ?? null;
 
         <div>
             <label for="conjunto1">Conjunto 1: </label>
-            <input type="text" id="conjunto1" value="<?php echo htmlspecialchars(implode(", ", $conjunto1), ENT_QUOTES, "UTF-8"); ?>" readonly>
+            <input type="text" id="conjunto1"
+                value="<?php echo htmlspecialchars(implode(", ", $conjunto1), ENT_QUOTES, "UTF-8"); ?>" readonly>
         </div>
         <div>
             <label for="conjunto2">Conjunto 2: </label>
-            <input type="text" id="conjunto2" value="<?php echo htmlspecialchars(implode(", ", $conjunto2), ENT_QUOTES, "UTF-8"); ?>" readonly>
+            <input type="text" id="conjunto2"
+                value="<?php echo htmlspecialchars(implode(", ", $conjunto2), ENT_QUOTES, "UTF-8"); ?>" readonly>
         </div>
 
         <div>
@@ -48,12 +54,15 @@ $resultado = $_GET["resultado"] ?? null;
         <div>
             <?php if (is_array($resultado) && isset($resultado["A-B"], $resultado["B-A"])): ?>
                 <label for="a-b">A-B: </label>
-                <input type="text" id="a-b" value="<?php echo htmlspecialchars(implode(", ", $resultado["A-B"]), ENT_QUOTES, "UTF-8"); ?>" readonly>
+                <input type="text" id="a-b"
+                    value="<?php echo htmlspecialchars(implode(", ", $resultado["A-B"]), ENT_QUOTES, "UTF-8"); ?>" readonly>
                 <label for="b-a">B-A: </label>
-                <input type="text" id="b-a" value="<?php echo htmlspecialchars(implode(", ", $resultado["B-A"]), ENT_QUOTES, "UTF-8"); ?>" readonly>
+                <input type="text" id="b-a"
+                    value="<?php echo htmlspecialchars(implode(", ", $resultado["B-A"]), ENT_QUOTES, "UTF-8"); ?>" readonly>
             <?php elseif (is_array($resultado)): ?>
                 <label for="resultado">Resultado: </label>
-                <input type="text" id="resultado" value="<?php echo htmlspecialchars(implode(", ", $resultado), ENT_QUOTES, "UTF-8"); ?>" readonly>
+                <input type="text" id="resultado"
+                    value="<?php echo htmlspecialchars(implode(", ", $resultado), ENT_QUOTES, "UTF-8"); ?>" readonly>
             <?php endif; ?>
         </div>
     </form>
@@ -61,6 +70,7 @@ $resultado = $_GET["resultado"] ?? null;
     <div>
         <a href="../index.html" class="enlace-volver">Volver</a>
     </div>
-    
+
 </body>
+
 </html>

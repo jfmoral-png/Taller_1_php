@@ -19,7 +19,7 @@ class Calculadora
             default:
                 return "Error: Operación no válida";
         }
-    
+
     }
 }
 

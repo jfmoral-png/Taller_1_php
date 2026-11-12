@@ -1,6 +1,8 @@
 <?php
-class FiboBinario {
-    public function calcular(string $modo, int $numero) {
+class FiboBinario
+{
+    public function calcular(string $modo, int $numero)
+    {
         switch ($modo) {
             case 'Fibonacci':
                 return $this->fibonacci($numero);
@@ -13,7 +15,8 @@ class FiboBinario {
         }
     }
 
-    public function decimalToBinary($number) {
+    public function decimalToBinary($number)
+    {
         if ($number < 0) {
             return "Número inválido";
         }
@@ -22,7 +25,8 @@ class FiboBinario {
         return $result;
     }
 
-    public function fibonacci($n) {
+    public function fibonacci($n)
+    {
         if ($n < 0) {
             return "Número inválido";
         }
@@ -39,7 +43,8 @@ class FiboBinario {
         return implode(", ", $sequence);
     }
 
-    public function factorial($n) {
+    public function factorial($n)
+    {
         if ($n < 0) {
             return "Número inválido";
         }

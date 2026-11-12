@@ -22,7 +22,8 @@
                 <option value="division">División</option>
             </select>
             <input type="num" id="numero2" placeholder="Diguite otro numero" name="numero2">
-            <input type="hidden" name="historial" value="<?php echo htmlspecialchars($_GET['historial'] ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>">
+            <input type="hidden" name="historial"
+                value="<?php echo htmlspecialchars($_GET['historial'] ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>">
         </div>
         <div>
             <button id="calcular" type="submit" name="accion">Calcular</button>
@@ -37,8 +38,9 @@
 
     <div>
         <p>Historial de operaciones:</p>
-        <textarea id="historial" placeholder="Historial de operaciones" readonly><?php echo htmlspecialchars($_GET['historial'] ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?></textarea>
-        <a href="calculadora.php"  class="button-limpiar">Limpiar historial</a>
+        <textarea id="historial" placeholder="Historial de operaciones"
+            readonly><?php echo htmlspecialchars($_GET['historial'] ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?></textarea>
+        <a href="calculadora.php" class="button-limpiar">Limpiar historial</a>
     </div>
 
     <div class="volver">
