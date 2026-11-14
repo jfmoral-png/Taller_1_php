@@ -2,7 +2,7 @@
 $frase = $_POST["frase"] ?? "";
 $accion = $_POST["accion"] ?? "";
 
-if ($_SERVER["REQUEST_METHOD"] !== "POST" || !is_string($frase)) {
+if (!is_string($frase)) {
     http_response_code(400);
     exit("Solicitud no válida.");
 }

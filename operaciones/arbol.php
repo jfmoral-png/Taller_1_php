@@ -1,6 +1,4 @@
 <?php
-require __DIR__ . "/../paginas/arbolBinario.php";
-
 function parseTraversal($value, string $name): array
 {
     if (!is_string($value)) {
@@ -159,18 +157,16 @@ function collectTraversals(?array $node, array &$preorder, array &$inorder, arra
 function renderTree(?array $node): string
 {
     if ($node === null) {
-        return "";
+        return '<li class="nodo-vacio" aria-hidden="true"></li>';
     }
 
-    $html = "<li>" . htmlspecialchars($node["value"], ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8");
+    $html = '<li><span class="nodo-arbol">'
+        . htmlspecialchars($node["value"], ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8")
+        . "</span>";
     if ($node["left"] !== null || $node["right"] !== null) {
         $html .= "<ul>";
-        if ($node["left"] !== null) {
-            $html .= renderTree($node["left"]);
-        }
-        if ($node["right"] !== null) {
-            $html .= renderTree($node["right"]);
-        }
+        $html .= renderTree($node["left"]);
+        $html .= renderTree($node["right"]);
         $html .= "</ul>";
     }
 
@@ -256,3 +252,5 @@ try {
     $tree = null;
     $calculated = null;
 }
+
+require __DIR__ . "/../paginas/arbolBinario.php";

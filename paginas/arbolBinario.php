@@ -40,7 +40,7 @@ $provided = $provided ?? [];
         </div>
         <div>
             <button type="submit">Construir árbol</button>
-            <a href="arbolBinario.php" class="button-limpiar">Limpiar</a>
+            <a href="../paginas/arbolBinario.php" class="button-limpiar">Limpiar</a>
         </div>
     </form>
 
@@ -60,7 +60,9 @@ $provided = $provided ?? [];
                 <p class="nota">Con preorden y postorden solamente, el árbol puede no ser único; los nodos con un solo hijo se
                     ubican a la izquierda.</p>
             <?php endif; ?>
-            <ul class="arbol"><?php echo $treeHtml; ?></ul>
+            <div class="contenedor-arbol">
+                <ul class="arbol"><?php echo $treeHtml; ?></ul>
+            </div>
         </div>
         <div>
             <h2>Recorridos</h2>

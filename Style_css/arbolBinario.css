@@ -10,14 +10,130 @@ textarea {
     font-size: 16px;
 }
 
+.contenedor-arbol {
+    box-sizing: border-box;
+    width: min(100%, 1000px);
+    margin: 24px auto;
+    padding: 24px 16px 32px;
+    overflow-x: auto;
+    text-align: center;
+    background-color: #111;
+    border: 1px solid #444;
+    border-radius: 12px;
+}
+
 .arbol {
-    display: inline-block;
-    text-align: left;
+    display: inline-flex;
+    min-width: max-content;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
     color: aliceblue;
 }
 
+.arbol,
 .arbol ul {
-    padding-left: 28px;
+    position: relative;
+    justify-content: center;
+    padding-top: 24px;
+}
+
+.arbol {
+    padding-top: 0;
+}
+
+.arbol ul {
+    display: flex;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.arbol ul::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 24px;
+    border-left: 2px solid #a78bfa;
+    content: "";
+}
+
+.arbol li {
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 24px 8px 0;
+    list-style: none;
+    text-align: center;
+    background: transparent;
+}
+
+.arbol li::before,
+.arbol li::after {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 50%;
+    height: 24px;
+    border-top: 2px solid #a78bfa;
+    content: "";
+}
+
+.arbol li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid #a78bfa;
+}
+
+.arbol li:first-child::before,
+.arbol li:last-child::after {
+    border: 0;
+}
+
+.arbol li:last-child::before {
+    border-right: 2px solid #a78bfa;
+    border-radius: 0 8px 0 0;
+}
+
+.arbol li:first-child::after {
+    border-radius: 8px 0 0 0;
+}
+
+.arbol li:only-child {
+    padding-top: 0;
+}
+
+.arbol li:only-child::before,
+.arbol li:only-child::after {
+    display: none;
+}
+
+.arbol li.nodo-vacio {
+    width: 76px;
+}
+
+.arbol li.nodo-vacio::before,
+.arbol li.nodo-vacio::after {
+    display: none;
+}
+
+.nodo-arbol {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    min-width: 52px;
+    min-height: 52px;
+    padding: 0 12px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    color: #fff;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+    background-color: #6d28d9;
+    border: 2px solid #c4b5fd;
+    border-radius: 999px;
+    box-shadow: 0 3px 12px rgb(109 40 217 / 35%);
 }
 
 .mensaje-error {
@@ -26,4 +142,15 @@ textarea {
 
 .nota {
     color: aliceblue;
+}
+
+@media (max-width: 600px) {
+    .contenedor-arbol {
+        padding: 20px 8px 28px;
+    }
+
+    .arbol li {
+        padding-right: 4px;
+        padding-left: 4px;
+    }
 }

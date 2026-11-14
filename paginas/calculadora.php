@@ -13,7 +13,7 @@
 <body>
     <form action="../operaciones/calculadora.php" method="post">
         <div>
-            <input type="num" id="numero1" placeholder="Diguite un numero" name="numero1">
+            <input type="number" id="numero1" placeholder="Diguite un numero" name="numero1" required>
             <label for="operaciones">Operaciones:</label>
             <select id="operaciones" name="operaciones">
                 <option value="suma">Suma</option>
@@ -21,7 +21,7 @@
                 <option value="multiplicacion">Multiplicación</option>
                 <option value="division">División</option>
             </select>
-            <input type="num" id="numero2" placeholder="Diguite otro numero" name="numero2">
+            <input type="num" id="numero2" placeholder="Diguite otro numero" name="numero2" required>
             <input type="hidden" name="historial"
                 value="<?php echo htmlspecialchars($_GET['historial'] ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>">
         </div>

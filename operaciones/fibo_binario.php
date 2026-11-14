@@ -17,20 +17,20 @@ class FiboBinario
 
     public function decimalToBinary($number)
     {
+        $result = '';
         if ($number < 0) {
             return "Número inválido";
         }
-        $result = '';
         $result = decbin($number);
         return $result;
     }
 
     public function fibonacci($n)
     {
+        $sequence = [];
         if ($n < 0) {
             return "Número inválido";
         }
-        $sequence = [];
         for ($i = 0; $i < $n; $i++) {
             if ($i === 0) {
                 $sequence[] = 0;
